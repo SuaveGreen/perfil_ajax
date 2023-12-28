@@ -1,7 +1,8 @@
 :root {
-    --header-color: #01a3a4;
-    --bg-color: #ebebeb;
+    --header-color: #068585;
+    --bg-color: #dddcdc;
     --details-color: #FFF;
+    --phone-size: ;
 }
 
 * {
@@ -25,22 +26,28 @@ body {
 header {
     background-color: var(--header-color);
     text-align: center;
-    height: 30vh;
+    height: 35vh;
 }
 
 header form {
     color: var(--bg-color);
     padding: 50px;
-    padding-top: 90px;
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+header form img {
+    margin-bottom: 25px;
+    width: 56px;
+    height: 56px;
 }
 
 header form #nickname-perfil {
     font-size: 16px;
     text-align: center;
     margin: 30px;
+    margin-top: 95px;
     width: 250px;
     height: 30px;
     border-radius: 8px;
@@ -98,12 +105,24 @@ header .container {
 }
 
 .profile-link {
-    background-color: var(--header-color);
-    color: var(--bg-color);
-    padding: 8px 16px;
     display: inline-block;
-    margin-top: 24px;
+    padding: 5px 0;
+    margin-top: 50px;
     text-decoration: none;
+    font-size: 16px;
+    width: 150px;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background-color: var(--header-color);
+    color: var(--details-color);
+}
+
+.profile-link:hover {cursor: pointer;
+color: var(--header-color);
+background-color: transparent;
+border: solid 2px var(--header-color);
+transition: ease-in .13s;
 }
 
 .numbers {
@@ -118,4 +137,124 @@ header .container {
 
 .numbers-item h4 {
     font-size: .3em;
+}
+
+/* telas maiores */
+
+@media (min-width: 1366px){
+
+    header {
+        background-color: rgb(24, 107, 13);
+    }
+
+    header form {
+        padding-top: 6.5vw;
+    }
+    
+    header form #nickname-perfil {
+        margin: 30px;
+        margin-top: 50px;
+    }
+
+    header .container {
+        position: relative;
+        bottom: -12vw;
+    }
+
+    .profile-link {
+        margin-top: 4vw;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1365px){
+
+    header {
+        background-color: rgb(123, 141, 19);
+    }
+
+    header form {
+        padding-top: 3.4vw;
+    }
+    
+    header form #nickname-perfil {
+        margin-top: 1.3vw;
+    }
+
+    header .container {
+        position: relative;
+        bottom: -56%;
+    }
+
+    .profile-link {
+        margin-top: 6vw;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    header {
+        background-color: #8b3f00;
+        height: 25vh;
+    }
+
+    header form {
+        padding-top: 15.6vw;
+    }
+    
+    header form #nickname-perfil {
+        margin-top: 2.5vw;
+    }
+
+    header .container {
+        position: relative;
+        bottom: -24vw;
+    }
+
+    .profile-link {
+        margin-top: 10vw;
+    }
+}
+
+@media (max-width: 767px) {
+
+    header {
+        height: 30vh;
+        background-color: rgb(73, 10, 10);
+    }
+
+    header form {
+        padding-top: 6.5vw;
+    }
+    
+    header form #nickname-perfil {
+        margin: 30px;
+        margin-top: 50px;
+    }
+
+    header .container {
+        bottom: -28vw;
+        width: 90%;
+    }
+
+    header .profile-avatar {
+        margin-bottom: 1vw;
+    }
+
+    .profile-link {
+        margin-top: 30vw;
+    }
+
+    header form {
+        padding-top: 8.5vw;
+    }
+
+    header form img {
+        margin-bottom: 18px;
+    }
+
+    header form #nickname-perfil {
+        margin: 30px;
+        margin-top: 26px;
+    }
+
 }
