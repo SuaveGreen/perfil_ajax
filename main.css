@@ -125,6 +125,10 @@ border: solid 2px var(--header-color);
 transition: ease-in .13s;
 }
 
+#button-back {
+    margin: 0;
+}
+
 .numbers {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -143,10 +147,6 @@ transition: ease-in .13s;
 
 @media (min-width: 1366px){
 
-    header {
-        background-color: rgb(24, 107, 13);
-    }
-
     header form {
         padding-top: 6.5vw;
     }
@@ -162,15 +162,11 @@ transition: ease-in .13s;
     }
 
     .profile-link {
-        margin-top: 4vw;
+        margin-top: 3vw;
     }
 }
 
 @media (min-width: 1024px) and (max-width: 1365px){
-
-    header {
-        background-color: rgb(123, 141, 19);
-    }
 
     header form {
         padding-top: 3.4vw;
@@ -188,14 +184,13 @@ transition: ease-in .13s;
     .profile-link {
         margin-top: 6vw;
     }
+
+    #button-back {
+        margin-top: 50px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-
-    header {
-        background-color: #8b3f00;
-        height: 25vh;
-    }
 
     header form {
         padding-top: 15.6vw;
@@ -216,11 +211,6 @@ transition: ease-in .13s;
 }
 
 @media (max-width: 767px) {
-
-    header {
-        height: 30vh;
-        background-color: rgb(73, 10, 10);
-    }
 
     header form {
         padding-top: 6.5vw;
