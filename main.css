@@ -158,7 +158,18 @@ transition: ease-in .13s;
 
     header .container {
         position: relative;
-        bottom: -12vw;
+        bottom: -5vw;
+    }
+
+    div .container {
+        
+        margin: 0;
+        bottom: 10vw;
+        margin-top: 15vw;
+    }
+
+    #info-container {
+        padding-top: 100px;
     }
 
     .profile-link {

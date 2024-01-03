@@ -37,12 +37,10 @@ $(document).ready(function () {
     const seguindoElement = document.querySelector('#following')
     const linkElement = document.querySelector('#link')
 
-    $('#confirm-button').click(function() {
+    $('#form-nick').submit(function (evento) {
+        evento.preventDefault();
         const nicknamePerfil = $('#nickname-perfil').val();
         const endpoint = `https://api.github.com/users/${nicknamePerfil}`
-        const botao = $(this);
-        $(botao).find('form').addClass('is-hidden');
-        $(botao).find('div').removeClass('is-hidden');
 
     fetch(endpoint)
     .then(function(res) {
@@ -61,14 +59,19 @@ $(document).ready(function () {
             alert("Ocorreu um erro ao buscar o perfil, verifique e tente novamente!")
         })
         .finally(function() {
-                $(botao).find('form').addClass('is-hidden');
-                $(botao).find('div').removeClass('is-hidden');
+                $('#form-nick').addClass('is-hidden');
+                $('#info-container').removeClass('is-hidden');
         })
+        $('#button-back').click(function () {
+            $('#form-nick').removeClass('is-hidden');
+            $('#info-container').addClass('is-hidden');
+        })
+        
         $('#form-nick').submit(function(evento) {
             evento.preventDefault();
 
-            if ($('#name').val().length == 0) {
-                throw new Error('Digite o nome');
+            if ($('#nickname-perfil').val() == 'undefined') {
+                throw new Error('Digite o nome corretamente');
             }
         })
     })
