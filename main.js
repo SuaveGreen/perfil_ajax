@@ -42,8 +42,16 @@ $(document).ready(function () {
         const nicknamePerfil = $('#nickname-perfil').val();
         const endpoint = `https://api.github.com/users/${nicknamePerfil}`
 
+        if (nicknamePerfil == '') {
+            alert('Digite um nome válido')
+            throw new Error('Digite um nome válido');
+        }
+
     fetch(endpoint)
     .then(function(res) {
+            if(res.status != 200) {
+                throw new Error('Perfil não encontrado')
+            }
             return res.json();
         })
         .then(function(json) {
@@ -65,14 +73,6 @@ $(document).ready(function () {
         $('#button-back').click(function () {
             $('#form-nick').removeClass('is-hidden');
             $('#info-container').addClass('is-hidden');
-        })
-        
-        $('#form-nick').submit(function(evento) {
-            evento.preventDefault();
-
-            if ($('#nickname-perfil').val() == 'undefined') {
-                throw new Error('Digite o nome corretamente');
-            }
         })
     })
 })
